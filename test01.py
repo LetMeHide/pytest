@@ -21,18 +21,7 @@ def get_content(url , data = None):
         try:
             rep = requests.get(url,headers = header,timeout = timeout)
             rep.encoding = 'utf-8'
-            # req = urllib.request.Request(url, data, header)
-            # response = urllib.request.urlopen(req, timeout=timeout)
-            # html1 = response.read().decode('UTF-8', errors='ignore')
-            # response.close()
             break
-        # except urllib.request.HTTPError as e:
-        #         print( '1:', e)
-        #         time.sleep(random.choice(range(5, 10)))
-        #
-        # except urllib.request.URLError as e:
-        #     print( '2:', e)
-        #     time.sleep(random.choice(range(5, 10)))
         except socket.timeout as e:
             print( '3:', e)
             time.sleep(random.choice(range(8,15)))
